@@ -29,7 +29,7 @@ git clone https://github.com/5thEmperor/CURD-opration
 
 
 
-pip install -r requirements.txt
+
 
 
 
