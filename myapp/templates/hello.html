@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: black;
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .btn-container {
+            margin-top: 40px;
+        }
+        .btn-container .btn {
+            margin-right: 10px;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-container .btn:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+        .search-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .search-container .form-control {
+            display: inline-block;
+            width: 300px;
+            margin-right: 10px;
+        }
+        .search-container .btn {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-4">Hello, World!</h1>
+        <div class="btn-container">
+            <a href="{% url 'users' %}" class="btn btn-primary">User List</a>
+            <a href="{% url 'new_user' %}" class="btn btn-primary">Add New User</a>
+        </div>
+
+        <div class="search-container">
+            <form method="GET" action="{% url 'search_users' %}">
+                <input type="text" class="form-control" name="search" placeholder="Search by ID, Name, or Email">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

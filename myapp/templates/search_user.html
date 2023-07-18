@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search User</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Search User</h1>
+        <form method="GET" action="{% url 'search_users' %}">
+            <div class="form-group">
+                <label for="search">Search by ID, Name, or Email:</label>
+                <input type="text" class="form-control" id="search" name="search">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+
+        {% if user %}
+            <h2>User Details</h2>
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                </tr>
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.role }}</td>
+                </tr>
+            </table>
+        {% else %}
+            {% if not message %}
+                <p>User not found.</p>
+            {% endif %}
+        {% endif %}
+    </div>
+    <!-- Add Bootstrap JS script -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
